@@ -3,7 +3,7 @@ import Input from "../components/ui/Input";
 import Button from "../components/ui/Button";
 import Checkbox from "../components/ui/Checkbox";
 import { useEffect, useState } from "react";
-import Script from "next/script";
+import emailjs from '@emailjs/browser';
 
 export default function GetStarted() {
   const [formData, setFormData] = useState({
@@ -15,9 +15,7 @@ export default function GetStarted() {
 
   useEffect(() => {
     // Initialize EmailJS
-    if (typeof window !== "undefined") {
-      window.emailjs.init("aD4Pcfs8DNCraiaWX");
-    }
+    emailjs.init("aD4Pcfs8DNCraiaWX");
   }, []);
 
   const servicesItems = [
@@ -42,7 +40,7 @@ export default function GetStarted() {
     };
 
     try {
-      await window.emailjs.send('service_r1mot3b', 'template_k2fne55', templateParams);
+      await emailjs.send('service_r1mot3b', 'template_k2fne55', templateParams);
       alert('Message sent successfully!');
       setFormData({ name: "", email: "", message: "", services: [] });
     } catch (error) {
@@ -65,7 +63,6 @@ export default function GetStarted() {
       <Head>
         <title>Contact us - Blinder</title>
       </Head>
-      <Script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" />
       <div className='pt-28 pb-12'>
         <div className='custom-screen text-gray-600'>
           <div className='max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none'>
@@ -121,27 +118,25 @@ export default function GetStarted() {
                     className='w-full mt-2 h-36 px-3 py-2 resize-none appearance-none bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg'></textarea>
                 </div>
                 <div>
-                  <label>Service</label>
-                  <ul className='mt-3 flex flex-wrap gap-x-8 gap-y-3 font-normal max-w-md sm:gap-x-16'>
+                  <label className='text-gray-700'>Services</label>
+                  <ul className='mt-3 space-y-2'>
                     {servicesItems.map((item, idx) => (
-                      <li key={idx} className='flex gap-x-2 items-center'>
-                        <Checkbox 
+                      <li key={idx}>
+                        <Checkbox
                           id={`service-${idx}`}
+                          label={item}
                           checked={formData.services.includes(item)}
                           onChange={() => handleServiceChange(item)}
                         />
-                        <label htmlFor={`service-${idx}`} className='text-sm'>
-                          {item}
-                        </label>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <div className='pt-1'>
-                  <Button type="submit" className='w-full text-white bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 ring-offset-2 ring-indigo-600 focus:ring'>
-                    Submit
-                  </Button>
-                </div>
+                <Button
+                  type='submit'
+                  className='w-full text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800'>
+                  Send message
+                </Button>
               </form>
             </div>
           </div>
