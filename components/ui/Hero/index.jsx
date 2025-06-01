@@ -21,9 +21,9 @@ const Hero = () => (
                 <div className="flex items-center justify-center gap-x-3 font-medium text-sm">
                     <NavLink
                         href="/get-started"
-                        className="text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 active:from-indigo-800 active:to-purple-800 px-6 py-2.5 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+                        className="inline-block font-medium text-sm text-white bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800"
                     >
-                        Start building
+                        Get Started
                     </NavLink>
                     <NavLink
                         href="#cta"

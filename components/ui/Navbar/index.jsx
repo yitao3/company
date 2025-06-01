@@ -10,9 +10,9 @@ const Navbar = () => {
     const { events } = useRouter();
 
     const navigation = [
-        { title: "Features", path: "#features" },
-        { title: "Our toolkit", path: "#toolkit" },
-        { title: "Testimonials", path: "#testimonials" },
+        { title: "Features", path: "/#features" },
+        { title: "Why FormEasily?", path: "/#toolkit" },
+        { title: "Testimonials", path: "/#testimonials" },
     ]
 
     useEffect(() => {
@@ -75,7 +75,7 @@ const Navbar = () => {
                                     href="/get-started"
                                     className="block font-medium text-sm text-white bg-gray-800 hover:bg-gray-600 active:bg-gray-900 md:inline"
                                 >
-                                    Let's work
+                                    Register now
                                 </NavLink>
                             </li>
                         </ul>

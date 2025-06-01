@@ -1,44 +1,44 @@
 import SectionWrapper from "../../SectionWrapper"
 import Image from "next/image"
-import wordpress from "../../../public/icons/wordpress.svg"
-import nextjs from "../../../public/icons/nextjs.svg"
-import tailwind from "../../../public/icons/tailwind.svg"
-import nodejs from "../../../public/icons/nodejs.svg"
-import vercel from "../../../public/icons/vercel.svg"
-import figma from "../../../public/icons/figma.svg"
+import attach_money from "../../../public/icons/money.svg"
+import assignment_turned_in from "../../../public/icons/assignment_turned_in_24dp_ 4B5563.svg"
+import verified from "../../../public/icons/verified_user_24dp_ 4B5563.svg"
+import devices from "../../../public/icons/devices_other_24dp_ 4B5563.svg"
+import support from "../../../public/icons/support_agent_24dp_ 4B5563.svg"
+import rocket_launch from "../../../public/icons/rocket_launch_24dp_ 4B5563.svg"
 
 const ToolKit = () => {
 
     const features = [
         {
-            icon: wordpress,
-            title: "Wordpress",
-            desc: "WordPress is an open-source content management system (CMS)."
+            icon: attach_money,
+            title: "Transparent Pricing",
+            desc: "Fixed, all-inclusive plans with no hidden fees."
         },
         {
-            icon: nextjs,
-            title: "Next.js",
-            desc: "Next.js is a React framework that gives you building blocks to create web apps."
+            icon: assignment_turned_in,
+            title: "Effortless Onboarding",
+            desc: "Quick setup with full support, whether a startup or expanding business."
         },
         {
-            icon: tailwind,
-            title: "Tailwind CSS",
-            desc: "Tailwind CSS is basically a utility-first CSS framework for rapidly building UIs."
+            icon: verified,
+            title: "Guaranteed Compliance",
+            desc: "Expert team ensures full regulatory compliance."
         },
         {
-            icon: nodejs,
-            title: "Node.js",
-            desc: "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment."
+            icon: devices,
+            title: "Fully Digital",
+            desc: "Paperless process with smart tech for easy company registration."
         },
         {
-            icon: vercel,
-            title: "Vercel",
-            desc: "Vercel is a cloud platform that enables developers to host web apps."
+            icon: support,
+            title: "World-Class Support",
+            desc: "Dedicated team provides fast, expert assistance."
         },
         {
-            icon: figma,
-            title: "Figma",
-            desc: "Figma is a web-based graphics editing and user interface design app."
+            icon: rocket_launch,
+            title: "Rapid Setup",
+            desc: "Launch your business in just one day."
         },
     ]
 
@@ -47,7 +47,7 @@ const ToolKit = () => {
             <div id="toolkit" className="max-w-screen-xl mx-auto px-4 text-gray-600 md:px-8">
                 <div className="max-w-2xl mx-auto space-y-3 sm:text-center">
                     <h2 className="text-gray-800 text-3xl font-semibold sm:text-4xl">
-                        Work with the best toolkit
+                        Why FormEasily？
                     </h2>
                     <p>
                         These are a few of our favourite things

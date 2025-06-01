@@ -4,40 +4,40 @@ const Testimonials = () => {
 
     const testimonials = [
         {
-            avatar: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-            name: "Alex wonderson",
+            avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+            name: "Alex Wonderson",
             title: "Founder of Lyconf",
-            quote: "As a small business owner, I was doing everything and my workload was increasing. With this startup, I was able to save time so I could focus on the things that matter most: my clients and my family."
+            quote: "As a small business owner, I was doing everything and my workload was increasing. With FormEasily, I was able to save time so I could focus on the things that matter most: my clients and my family."
         },
         {
-            avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-            name: "Karim ahmed",
-            title: "DevOps engineer",
-            quote: "My company's software now is easy to use, saves time and money, and is loved by a lot of users. One customer saved $10k over the course of 3 years and another saves 8 hours per week! Thanks to Blinder."
+            avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+            name: "Sophie Lee",
+            title: "CEO of VisionTech",
+            quote: "FormEasily made the entire company registration process in Hong Kong so smooth and fast. The transparency in pricing and the expert support gave me peace of mind. Now I can focus on growing my business with confidence."
         },
         {
-            avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
-            name: "Lysa stian",
-            title: "System manger",
-            quote: "My business was in a dire situation. I had no idea what to do, and I felt like I was losing hope. Then I found this Startup and everything changed. It helped me create automated sales."
+            avatar: "https://randomuser.me/api/portraits/men/65.jpg",
+            name: "Mark Thompson",
+            title: "Founder of GreenTech Solutions",
+            quote: "Setting up my business in Mainland China seemed daunting at first, but FormEasily made it so simple. Their team handled everything remotely, and I didn't have to leave my office. A true game-changer for global expansion!"
         },
         {
-            avatar: "https://randomuser.me/api/portraits/women/79.jpg",
-            name: "Angela stian",
-            title: "Product designer",
-            quote: "One day, my company was about to go under and I had no idea what to do. I found Blinder and it helped me get my business back on track.Now, my company is flourishing and I see new opportunities."
+            avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+            name: "Emma Zhang",
+            title: "Founder of ZenStudio",
+            quote: "I'm so glad I chose FormEasily for registering my business in Hong Kong. The process was incredibly fast, and the team was there for me every step of the way. They made a complicated process feel effortless."
         },
         {
-            avatar: "https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=386&q=80",
-            name: "Jurica koletic",
-            title: "Founder of Let’s code",
-            quote: "In these difficult economic times, doing business is tough. Funding is hard to come by and many entrepreneurs are struggling to keep their doors open. but when I found this startup everything changed."
+            avatar: "https://randomuser.me/api/portraits/men/77.jpg",
+            name: "David Miller",
+            title: "Co-Founder of EcoWorld",
+            quote: "I needed to expand my business into China quickly, and FormEasily delivered. Their transparent pricing, fast setup, and guaranteed compliance were exactly what I needed. Now, my business is growing in Asia!"
         },
         {
-            avatar: "https://images.unsplash.com/photo-1590038767624-dac5740a997b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
-            name: "Kavi laron",
-            title: "Full stack engineer",
-            quote: "We all know how costly it is to find good help. I was faced with this problem when I lost my data entry staff and my business was on the brink of going under. Thankfully, Blinder saved the day."
+            avatar: "https://randomuser.me/api/portraits/men/12.jpg",
+            name: "John Smith",
+            title: "CEO of InnovateTech",
+            quote: "Working with FormEasily was a seamless experience. I was able to get my company up and running in just one day with their fully digital process. The support team was responsive, and everything was handled remotely, saving me time and money."
         },
     ]
 
