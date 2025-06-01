@@ -1,45 +1,52 @@
 import Image from 'next/image'
-import freshbooks from '../../../public/logos/freshbooks.svg'
-import sendgrid from '../../../public/logos/sendgrid.svg'
-import layers from '../../../public/logos/layers.svg'
-import adobe from '../../../public/logos/adobe.svg'
+import customers from '../../../public/icons/customers.svg'
+import hkcompany from '../../../public/icons/hkcompany.svg'
+import cncompany from '../../../public/icons/cncompany.svg'
+import countries from '../../../public/icons/countries.svg'
 
-const logos = [
+const stats = [
     {
-        src: freshbooks,
-        alt: "freshbooks"
+        title: "Number of Clients",
+        icon: customers,
+        value: "5000+"
     },
     {
-        src: sendgrid,
-        alt: "sendgrid"
+        title: "Hong Kong Companies Registered",
+        icon: hkcompany,
+        value: "3000+"
     },
     {
-        src: layers,
-        alt: "layers"
+        title: "Mainland China Companies Registered",
+        icon: cncompany,
+        value: "2000+"
     },
     {
-        src: adobe,
-        alt: "adobe"
-    },
+        title: "Client's Country",
+        icon: countries,
+        value: "100+"
+    }
 ]
-
 
 const LogoGrid = () => (
     <div>
         <div className="custom-screen">
-            <h2 className="font-semibold text-sm text-gray-600 text-center mt-12">
-                TRUSTED BY TEAMS FROM AROUND THE WORLD
+            <h2 className="font-bold text-xl text-black text-center mt-24">
+                TRUSTED BY CLIENTS FROM AROUND THE WORLD
             </h2>
             <div className="mt-6">
-                <ul className="flex gap-x-10 gap-y-6 flex-wrap items-center justify-center md:gap-x-16">
+                <div className="grid grid-cols-4 gap-8 items-center justify-items-center">
                     {
-                        logos.map((item, idx) => (
-                            <li key={idx}>
-                                <Image src={item.src} alt={item.alt} />
-                            </li>
+                        stats.map((item, idx) => (
+                            <div key={idx} className="flex flex-col items-center">
+                                <div className="flex items-center gap-2">
+                                    <Image src={item.icon} alt={item.title} width={24} height={24} />
+                                    <span className="text-2xl font-bold text-black">{item.value}</span>
+                                </div>
+                                <span className="text-sm font-bold text-black mt-2 text-center">{item.title}</span>
+                            </div>
                         ))
                     }
-                </ul>
+                </div>
             </div>
         </div>
     </div>
