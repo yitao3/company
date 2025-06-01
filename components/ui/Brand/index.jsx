@@ -3,10 +3,9 @@ import Link from "next/link";
 const Brand = () => (
     <Link href="/">
         <img
-            src="/blinder.svg"
-            width={120}
-            height={50}
-            alt="Blinder logo"
+            src="/formeasily.png"
+            alt="Formeasily logo"
+            style={{ maxHeight: 40, objectFit: "contain", display: "block", margin: "0 auto" }}
         />
     </Link>
 )
