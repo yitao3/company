@@ -6,8 +6,8 @@ const Layout = ({ children }) => {
     return (
         <>
             <Head>
-                <title>Blinder</title>
-                <meta name='description' content='Blinder making it simple for you to build and grow your SaaS applications, or any business idea' />
+                <title>FormEasily</title>
+                <meta name='description' content='FormEasily makes business registration easy and transparent for Hong Kong and Mainland China.' />
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
                 <link rel='icon' href='/favicon.ico' />
             </Head>
