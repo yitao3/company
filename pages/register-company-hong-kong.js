@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function HKCompany() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -51,24 +53,26 @@ export default function HKCompany() {
                 Start your business journey in Hong Kong with our comprehensive company registration services. We handle all the paperwork while you focus on growing your business.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a
+                <Link
                   href="/get-started"
                   className="px-6 py-3 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors"
                 >
                   Get Started
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/get-started"
                   className="px-6 py-3 text-gray-700 bg-white rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
             <div className="lg:text-right">
-              <img
+              <Image
                 src="/img/hero.png"
                 alt="Hong Kong Business"
+                width={500}
+                height={300}
                 className="w-full max-w-lg mx-auto"
               />
             </div>
@@ -90,9 +94,11 @@ export default function HKCompany() {
           <div className="mt-16 grid sm:grid-cols-2 gap-8">
             <div className="relative">
               <div className="relative z-10">
-                <img
+                <Image
                   src="/img/benefit-one.png"
                   alt="Strategic Location"
+                  width={500}
+                  height={300}
                   className="w-full rounded-lg shadow-lg"
                 />
               </div>
@@ -216,9 +222,11 @@ export default function HKCompany() {
             </div>
             <div className="relative">
               <div className="relative z-10">
-                <img
+                <Image
                   src="/img/benefit-two.png"
                   alt="Business Environment"
+                  width={500}
+                  height={300}
                   className="w-full rounded-lg shadow-lg"
                 />
               </div>
