@@ -15,6 +15,7 @@ const Navbar = () => {
     const navigation = [
         { title: "REGISTER_DROPDOWN" },
         { title: "Features", path: "/#features" },
+        { title: "Blog", path: "/blog" },
         { title: "Why FormEasily?", path: "/#toolkit" },
         { title: "Testimonials", path: "/#testimonials" },
     ]
