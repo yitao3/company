@@ -370,12 +370,12 @@ export default function HKCompany() {
               Register your business effortlessly with expert support. Follow industry best practices, eliminate complexities, and launch on time with our seamless registration process for Hong Kong and Mainland China.
             </p>
             <div className="mt-8 flex justify-center">
-              <a
+              <Link
                 href="/get-started"
                 className="px-8 py-3 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 export default function CNCompany() {
   const [openFaq, setOpenFaq] = useState(null);
@@ -51,18 +52,18 @@ export default function CNCompany() {
                 Start your business journey in Mainland China with our comprehensive company registration services. We handle all the paperwork while you focus on growing your business.
               </p>
               <div className="mt-8 flex flex-wrap gap-4">
-                <a
+                <Link
                   href="/get-started"
                   className="px-6 py-3 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors"
                 >
                   Get Started
-                </a>
-                <a
+                </Link>
+                <Link
                   href="/get-started"
                   className="px-6 py-3 text-gray-700 bg-white rounded-lg hover:bg-gray-50 transition-colors"
                 >
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
             <div className="lg:text-right">
@@ -362,12 +363,12 @@ export default function CNCompany() {
               Register your business effortlessly with expert support. Follow industry best practices, eliminate complexities, and launch on time with our seamless registration process for Hong Kong and Mainland China.
             </p>
             <div className="mt-8 flex justify-center">
-              <a
+              <Link
                 href="/get-started"
                 className="px-8 py-3 text-white bg-indigo-600 rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 Get Started
-              </a>
+              </Link>
             </div>
           </div>
         </div>
