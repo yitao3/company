@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Brand from '../Brand'
 import NavLink from '../NavLink'
 
@@ -8,8 +8,12 @@ const Navbar = () => {
 
     const [state, setState] = useState(false)
     const { events } = useRouter();
+    // 下拉菜单显示控制
+    const [dropdownOpen, setDropdownOpen] = useState(false);
+    const dropdownTimeout = useRef();
 
     const navigation = [
+        { title: "REGISTER_DROPDOWN" },
         { title: "Features", path: "/#features" },
         { title: "Why FormEasily?", path: "/#toolkit" },
         { title: "Testimonials", path: "/#testimonials" },
@@ -29,6 +33,14 @@ const Navbar = () => {
         setState(!state)
         document.body.classList.toggle("overflow-hidden")
     }
+
+    const handleDropdownEnter = () => {
+        clearTimeout(dropdownTimeout.current);
+        setDropdownOpen(true);
+    };
+    const handleDropdownLeave = () => {
+        dropdownTimeout.current = setTimeout(() => setDropdownOpen(false), 1000);
+    };
 
     return (
         <header>
@@ -55,25 +67,37 @@ const Navbar = () => {
                         </div>
                     </div>
                     <div className={`flex-1 pb-3 mt-8 md:pb-0 md:mt-0 md:block ${state ? "" : "hidden"}`}>
-                        <ul className="text-gray-700 justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0 md:text-gray-600 md:font-medium">
-                            {
-                                navigation.map((item, idx) => {
-                                    return (
-                                        <li key={idx} className="duration-150 hover:text-gray-900">
-                                            <Link
-                                                href={item.path}
-                                                className="block"
-                                            >
-                                                {item.title}
-                                            </Link>
-                                        </li>
-                                    )
-                                })
-                            }
+                        <ul className="text-gray-700 justify-end items-center space-y-6 md:flex md:space-x-6 md:space-y-0 md:text-gray-600 md:font-medium font-bold">
+                            <li className="relative group"
+                                onMouseEnter={handleDropdownEnter}
+                                onMouseLeave={handleDropdownLeave}
+                            >
+                                <button className="flex items-center font-bold text-sm text-gray-700 hover:text-indigo-600 focus:outline-none md:px-2 py-2">
+                                    Register a company
+                                    <svg className="ml-1 w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                                </button>
+                                <div className={`absolute left-0 z-20 ${dropdownOpen ? 'block' : 'hidden'} bg-white shadow-lg rounded-md mt-2 min-w-[200px] border border-gray-100`}
+                                >
+                                    <Link href="/register-company-hong-kong" className="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-indigo-600 rounded-t-md whitespace-nowrap font-bold">Hong Kong Company</Link>
+                                    <Link href="/register-company-chinese-mainland" className="block px-6 py-3 text-gray-700 hover:bg-gray-50 hover:text-indigo-600 rounded-b-md whitespace-nowrap font-bold">Chinese Mainland Company</Link>
+                                </div>
+                            </li>
+                            {navigation.filter(item => item.title !== "REGISTER_DROPDOWN").map((item, idx) => {
+                                return (
+                                    <li key={idx} className="duration-150 hover:text-gray-900">
+                                        <Link
+                                            href={item.path}
+                                            className="block font-bold"
+                                        >
+                                            {item.title}
+                                        </Link>
+                                    </li>
+                                )
+                            })}
                             <li>
                                 <NavLink
                                     href="/get-started"
-                                    className="block font-medium text-sm text-white bg-gray-800 hover:bg-gray-600 active:bg-gray-900 md:inline"
+                                    className="block font-medium font-bold text-sm text-white bg-gray-800 hover:bg-gray-600 active:bg-gray-900 md:inline"
                                 >
                                     Register now
                                 </NavLink>
