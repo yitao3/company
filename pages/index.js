@@ -12,6 +12,7 @@ export default function Home() {
   return (
     <>
       <Head>
+        <title>FormEasily - Company Registration Made Easy</title>
         <meta name='robots' content='index' />
       </Head>
       <Hero />

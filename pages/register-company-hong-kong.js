@@ -69,7 +69,7 @@ export default function HKCompany() {
             </div>
             <div className="lg:text-right">
               <Image
-                src="/img/hero.png"
+                src="/img/hero-1.png"
                 alt="Hong Kong Business"
                 width={500}
                 height={300}
@@ -95,7 +95,7 @@ export default function HKCompany() {
             <div className="relative">
               <div className="relative z-10">
                 <Image
-                  src="/img/benefit-one.png"
+                  src="/img/benefit-1.png"
                   alt="Strategic Location"
                   width={500}
                   height={300}
@@ -223,8 +223,8 @@ export default function HKCompany() {
             <div className="relative">
               <div className="relative z-10">
                 <Image
-                  src="/img/benefit-two.png"
-                  alt="Business Environment"
+                  src="/img/benefit-2.png"
+                  alt="Global Connectivity"
                   width={500}
                   height={300}
                   className="w-full rounded-lg shadow-lg"

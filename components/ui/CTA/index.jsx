@@ -9,7 +9,14 @@ const CTA = () => {
             <div className="custom-screen">
                 <div className="items-center gap-x-12 lg:flex">
                     <div className="flex-1 sm:hidden lg:block">
-                        <Image src={ctaImage} className="rounded-lg md:max-w-lg" alt="Create Successful Business Models with Our IT Solutions" />
+                        <Image 
+                            src={ctaImage} 
+                            className="rounded-lg md:max-w-lg" 
+                            alt="Create Successful Business Models with Our IT Solutions"
+                            quality={75}
+                            placeholder="blur"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        />
                     </div>
                     <div className="max-w-xl mt-6 md:mt-0 lg:max-w-2xl">
                         <h2 className="text-gray-800 text-3xl font-semibold sm:text-4xl">

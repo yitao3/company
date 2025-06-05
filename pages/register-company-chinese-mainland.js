@@ -68,7 +68,7 @@ export default function CNCompany() {
             </div>
             <div className="lg:text-right">
               <img
-                src="/img/hero.png"
+                src="/img/hero-1.png"
                 alt="China Business"
                 className="w-full max-w-lg mx-auto"
               />
@@ -92,7 +92,7 @@ export default function CNCompany() {
             <div className="relative">
               <div className="relative z-10">
                 <img
-                  src="/img/benefit-one.png"
+                  src="/img/benefit-1.png"
                   alt="Strategic Location"
                   className="w-full rounded-lg shadow-lg"
                 />
@@ -100,8 +100,8 @@ export default function CNCompany() {
             </div>
             <div className="space-y-8 pt-16 pb-8">
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-800 sm:text-3xl">More Reasons to Choose Hong Kong</h2>
-                <p className="mt-2 text-gray-600">Explore additional advantages that make Hong Kong a premier destination for your business expansion.</p>
+                <h2 className="text-2xl font-bold text-gray-800 sm:text-3xl">More Reasons to Choose China</h2>
+                <p className="mt-2 text-gray-600">Explore additional advantages that make Mainland China a top destination for your business expansion, such as policy support, supply chain integration, and access to a vast domestic market.</p>
               </div>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
@@ -160,8 +160,8 @@ export default function CNCompany() {
           <div className="mt-16 grid sm:grid-cols-2 gap-8">
             <div className="space-y-8 pt-16 pb-8">
               <div className="mb-8">
-                <h2 className="text-2xl font-bold text-gray-800 sm:text-3xl">More Reasons to Choose Hong Kong</h2>
-                <p className="mt-2 text-gray-600">Explore additional advantages that make Hong Kong a premier destination for your business expansion.</p>
+                <h2 className="text-2xl font-bold text-gray-800 sm:text-3xl">More Reasons to Choose China</h2>
+                <p className="mt-2 text-gray-600">Discover the unique benefits of registering a company in Mainland China, including government incentives, innovation opportunities, and a dynamic business environment.</p>
               </div>
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0">
@@ -215,14 +215,12 @@ export default function CNCompany() {
                 </div>
               </div>
             </div>
-            <div className="relative">
-              <div className="relative z-10">
-                <img
-                  src="/img/benefit-two.png"
-                  alt="Business Environment"
-                  className="w-full rounded-lg shadow-lg"
-                />
-              </div>
+            <div className="relative z-10">
+              <img
+                src="/img/benefit-2.png"
+                alt="Digital Economy"
+                className="w-full rounded-lg shadow-lg"
+              />
             </div>
           </div>
         </div>

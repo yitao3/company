@@ -10,7 +10,7 @@ const Hero = () => (
         <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-gradient-to-r from-purple-200 to-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-to-r from-pink-200 to-indigo-200 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-4000"></div>
 
-        <div className="custom-screen py-20 text-gray-600 relative z-10">
+        <div className="custom-screen py-20 pt-32 text-gray-600 relative z-10">
             <div className="space-y-5 max-w-4xl mx-auto text-center">
                 <h1 className="text-4xl text-gray-800 font-extrabold mx-auto sm:text-6xl text-center">
                     The <span className="text-indigo-600 font-bold">Easiest</span> Way to Register Your Company in <span className="text-indigo-600 font-bold">Hong Kong and China</span>
