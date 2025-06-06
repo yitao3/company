@@ -2,11 +2,11 @@ import Head from "next/head"
 import Navbar from "./ui/Navbar"
 import Footer from "./ui/Footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title = "FormEasily" }) => {
     return (
         <>
             <Head>
-                <title>FormEasily</title>
+                <title>{title}</title>
                 <meta name='description' content='FormEasily makes business registration easy and transparent for Hong Kong and Mainland China.' />
                 <meta name='viewport' content='width=device-width, initial-scale=1' />
                 <link rel='icon' href='/favicon.ico' />

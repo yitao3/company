@@ -8,6 +8,7 @@ export async function getStaticProps() {
   return {
     props: {
       blogs: blogs,
+      title: "Blog - FormEasily"
     },
   };
 }
