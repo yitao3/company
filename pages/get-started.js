@@ -47,8 +47,8 @@ export default function GetStarted() {
       <Head>
         <title>Contact us - FormEasily</title>
       </Head>
-      <div className='pt-28 pb-12'>
-        <div className='custom-screen text-gray-600'>
+      <div className='pt-36 pb-12 min-h-[90vh]'>
+        <div className='custom-screen text-gray-600 mt-20'>
           <div className='max-w-lg mx-auto gap-12 justify-between lg:flex lg:max-w-none'>
             <div className='max-w-lg sm:text-center lg:text-left'>
               <h1 className='text-gray-800 text-3xl font-semibold sm:text-4xl'>
