@@ -37,6 +37,29 @@ const BlogDetail = ({ blog }) => {
         <title>{blog.title} - FormEasily</title>
         <meta name="description" content={blog.excerpt} />
       </Head>
+      {/* Article 结构化数据 */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": blog.title,
+          "description": blog.excerpt,
+          "image": `https://www.formeasily.com${blog.thumbnail}`,
+          "datePublished": blog.publishDate,
+          "author": {
+            "@type": "Organization",
+            "name": "FormEasily"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "FormEasily",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://www.formeasily.com/formeasily.png"
+            }
+          }
+        })
+      }} />
 
       <main className="custom-screen pt-20">
         <div className="max-w-3xl mx-auto">

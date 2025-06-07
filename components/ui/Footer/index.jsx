@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -10,9 +11,11 @@ export default function Footer() {
             <div>
               <Link href="/" className="flex items-center space-x-2 text-lg font-semibold text-indigo-600">
                 <span>
-                  <img
+                  <Image
                     src="/formeasily.png"
                     alt="Formeasily logo"
+                    width={120}
+                    height={40}
                     style={{ maxHeight: 40, objectFit: "contain" }}
                   />
                 </span>
