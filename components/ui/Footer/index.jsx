@@ -11,14 +11,11 @@ export default function Footer() {
               <Link href="/" className="flex items-center space-x-2 text-lg font-semibold text-indigo-600">
                 <span>
                   <img
-                    src="/img/logo.svg"
-                    alt="FormEasily"
-                    width="28"
-                    height="28"
-                    className="w-7"
+                    src="/formeasily.png"
+                    alt="Formeasily logo"
+                    style={{ maxHeight: 40, objectFit: "contain" }}
                   />
                 </span>
-                <span>FormEasily</span>
               </Link>
             </div>
             <div className="max-w-md mt-3 text-xs text-gray-400">
@@ -75,7 +72,13 @@ export default function Footer() {
                 <span className="font-medium text-gray-600">Email:</span> info@formeasily.com
               </li>
               <li>
-                <span className="font-medium text-gray-600">Phone:</span> +852 XXXX XXXX
+                <span className="font-medium text-gray-600">Phone:</span> +852 6421 5778
+              </li>
+              <li>
+                <span className="font-medium text-gray-600">Address:</span><br />
+                12th Floor, 100 Nathan Road,<br />
+                Mong Kok, Kowloon,<br />
+                Hong Kong
               </li>
             </ul>
             <div className="flex mt-4 space-x-4">
