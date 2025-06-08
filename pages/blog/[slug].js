@@ -1,33 +1,29 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import blogs from '../../data/blogs';
+import { getBlogBySlug } from '../../lib/supabase';
 import ReactMarkdown from 'react-markdown';
 import rehypeRaw from 'rehype-raw';
 
-export async function getStaticPaths() {
-  const paths = blogs.map((blog) => ({
-    params: { slug: blog.slug },
-  }));
+export async function getServerSideProps({ params }) {
+  try {
+    const blog = await getBlogBySlug(params.slug);
 
-  return {
-    paths,
-    fallback: false,
-  };
-}
+    if (!blog) {
+      return {
+        notFound: true,
+      };
+    }
 
-export async function getStaticProps({ params }) {
-  const blog = blogs.find((blog) => blog.slug === params.slug);
-
-  if (!blog) {
+    return {
+      props: { blog },
+    };
+  } catch (error) {
+    console.error('Error in getServerSideProps:', error);
     return {
       notFound: true,
     };
   }
-
-  return {
-    props: { blog },
-  };
 }
 
 const BlogDetail = ({ blog }) => {
@@ -73,7 +69,7 @@ const BlogDetail = ({ blog }) => {
           </div>
           <h1 className="text-4xl font-bold text-gray-800 mb-4">{blog.title}</h1>
           <div className="text-sm text-gray-500 mb-6">
-            {new Date(blog.publishDate).toLocaleDateString('en-US', {
+            {new Date(blog.publish_date).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric'
@@ -106,6 +102,9 @@ const BlogDetail = ({ blog }) => {
                 ),
                 a: ({node, ...props}) => (
                   <Link href={props.href} {...props} />
+                ),
+                strong: ({node, ...props}) => (
+                  <strong className="font-bold text-gray-800" {...props} />
                 ),
               }}
             >

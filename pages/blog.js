@@ -2,33 +2,28 @@ import Head from "next/head";
 import { useState } from "react";
 import CTA from "../components/ui/CTA";
 import BlogCard from "../components/ui/BlogCard";
-import blogs from '../data/blogs';
+import { getAllBlogs } from '../lib/supabase';
 
-export async function getStaticProps() {
+export async function getServerSideProps({ query }) {
+  const page = parseInt(query.page) || 1;
+  const pageSize = 6;
+  
+  // 从Supabase获取博客数据
+  const { blogs, total } = await getAllBlogs(page, pageSize);
+  
   return {
     props: {
-      blogs: blogs,
+      blogs: blogs || [],
+      total,
+      currentPage: page,
+      pageSize,
       title: "Blog - FormEasily"
-    },
+    }
   };
 }
 
-export default function Blog({ blogs }) {
-  const [currentPage, setCurrentPage] = useState(1);
-  const blogsPerPage = 6;
-  const totalPages = Math.ceil(blogs.length / blogsPerPage);
-  
-  // 获取当前页的博客文章
-  const currentBlogs = blogs.slice(
-    (currentPage - 1) * blogsPerPage,
-    currentPage * blogsPerPage
-  );
-
-  // 处理页码点击
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+export default function Blog({ blogs, total, currentPage, pageSize }) {
+  const totalPages = Math.ceil(total / pageSize);
 
   return (
     <>
@@ -49,51 +44,51 @@ export default function Blog({ blogs }) {
           </div>
 
           <div className="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {currentBlogs.map((blog) => (
+            {blogs.map((blog) => (
               <BlogCard key={blog.id} blog={blog} />
             ))}
           </div>
 
           {/* 分页控制 */}
-          <div className="mt-12 flex justify-center items-center space-x-2">
-            <button
-              onClick={() => handlePageChange(currentPage - 1)}
-              disabled={currentPage === 1}
-              className={`px-4 py-2 rounded-lg ${
-                currentPage === 1
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-white text-gray-700 hover:bg-gray-50'
-              } border border-gray-200`}
-            >
-              Previous
-            </button>
-            
-            {[...Array(totalPages)].map((_, index) => (
-              <button
-                key={index + 1}
-                onClick={() => handlePageChange(index + 1)}
+          {totalPages > 1 && (
+            <div className="mt-12 flex justify-center items-center space-x-2">
+              <a
+                href={`/blog?page=${currentPage - 1}`}
                 className={`px-4 py-2 rounded-lg ${
-                  currentPage === index + 1
-                    ? 'bg-indigo-600 text-white'
+                  currentPage === 1
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                     : 'bg-white text-gray-700 hover:bg-gray-50'
                 } border border-gray-200`}
               >
-                {index + 1}
-              </button>
-            ))}
+                Previous
+              </a>
+              
+              {[...Array(totalPages)].map((_, index) => (
+                <a
+                  key={index + 1}
+                  href={`/blog?page=${index + 1}`}
+                  className={`px-4 py-2 rounded-lg ${
+                    currentPage === index + 1
+                      ? 'bg-indigo-600 text-white'
+                      : 'bg-white text-gray-700 hover:bg-gray-50'
+                  } border border-gray-200`}
+                >
+                  {index + 1}
+                </a>
+              ))}
 
-            <button
-              onClick={() => handlePageChange(currentPage + 1)}
-              disabled={currentPage === totalPages}
-              className={`px-4 py-2 rounded-lg ${
-                currentPage === totalPages
-                  ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
-                  : 'bg-white text-gray-700 hover:bg-gray-50'
-              } border border-gray-200`}
-            >
-              Next
-            </button>
-          </div>
+              <a
+                href={`/blog?page=${currentPage + 1}`}
+                className={`px-4 py-2 rounded-lg ${
+                  currentPage === totalPages
+                    ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-white text-gray-700 hover:bg-gray-50'
+                } border border-gray-200`}
+              >
+                Next
+              </a>
+            </div>
+          )}
         </div>
       </main>
 

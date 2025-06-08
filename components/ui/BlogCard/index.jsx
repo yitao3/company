@@ -15,7 +15,7 @@ const BlogCard = ({ blog }) => {
         </div>
         <div className="p-6 flex-1 flex flex-col">
           <div className="text-sm text-gray-500 mb-2">
-            {new Date(blog.publishDate).toLocaleDateString('en-US', {
+            {new Date(blog.publish_date).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'long',
               day: 'numeric'

@@ -1,3 +1,48 @@
+# 博客数据迁移到Supabase
+
+这个项目包含将本地博客数据从JavaScript文件迁移到Supabase数据库的工具。
+
+## 步骤
+
+### 1. 提取博客数据
+运行以下命令将blogs.js中的数据提取为CSV格式：
+```
+python export_blogs_to_csv.py
+```
+这将创建一个名为`blogs_for_supabase.csv`的文件。
+
+### 2. 设置Supabase
+1. 在Supabase中创建一个新表`blogs`，包含以下字段：
+   - blog_id: text (primary key)
+   - title: text
+   - slug: text
+   - excerpt: text
+   - publish_date: timestamp with time zone
+   - thumbnail: text
+   - content: text
+
+2. 从Supabase控制台获取API密钥（Project Settings > API）
+
+### 3. 上传数据到Supabase
+有两种方式运行上传脚本：
+
+#### 方式1：使用环境变量（推荐）
+在PowerShell中运行：
+```powershell
+$env:SUPABASE_KEY="your-supabase-key"; node upload_to_supabase.js
+```
+
+#### 方式2：直接修改脚本
+1. 打开`upload_to_supabase.js`
+2. 将`supabaseKey`变量的值替换为您的实际API密钥
+3. 运行：
+```
+node upload_to_supabase.js
+```
+
+### 4. 更新前端代码
+上传完成后，您需要修改前端代码以从Supabase而不是本地文件加载博客数据。
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
